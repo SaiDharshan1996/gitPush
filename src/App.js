@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ValidatedLoginForm from './LoginForm/validatingLoginForm';
+import  TableData  from './TableData/tableData';
+import { BrowserRouter, Route } from "react-router-dom";
+
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+      <div className="App">
+        <h1>Validated Login Form</h1>
+        <ValidatedLoginForm />
+      <Route path='/data' Component={TableData} />
+      </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
